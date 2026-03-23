@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finca Ananda – Off-Market Exklusiv-Anwesen | Manilva | 5.000.000 €</title>
+  <title>Finca Ananda â Off-Market Exklusiv-Anwesen | Manilva | 5.000.000 â¬</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -63,7 +63,7 @@
     .price-badge { display: inline-block; background: var(--cream); border: 2px solid var(--orange); color: var(--brown); font-size: 26px; font-weight: 700; letter-spacing: 2px; padding: 16px 56px; border-radius: 4px; }
     .price-badge span { display: block; font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
 
-    /* NUTZUNGSMÖGLICHKEITEN */
+    /* NUTZUNGSMÃGLICHKEITEN */
     .nutzung { background: var(--cream); padding: 80px 48px; }
     .section-header { text-align: center; margin-bottom: 52px; }
     .section-header h2 { font-size: 32px; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
@@ -188,7 +188,7 @@
 
     /* FENG SHUI */
     .fengshui { background: linear-gradient(135deg, #0f2a2a 0%, #1a3a2a 45%, #0f2535 100%); padding: 90px 48px; position: relative; overflow: hidden; }
-    .fengshui::before { content: '☯'; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 300px; color: rgba(255,255,255,.025); pointer-events: none; line-height: 1; }
+    .fengshui::before { content: 'â¯'; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 300px; color: rgba(255,255,255,.025); pointer-events: none; line-height: 1; }
     .fs-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1100px; margin: 0 auto; }
     .fs-text .overline { color: #7EC8C8; }
     .fs-text h2 { font-size: 30px; font-weight: 700; color: white; margin-bottom: 6px; line-height: 1.25; }
@@ -297,6 +297,38 @@
   </style>
 </head>
 <body>
+<!-- PASSWORD GATE -->
+<div id="pwGate" style="position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#4A2E1E 0%,#753E10 50%,#E8793C 100%);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;">
+  <div style="background:rgba(255,255,255,0.97);border-radius:16px;padding:48px 40px;max-width:400px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+    <div style="font-size:48px;margin-bottom:12px;">ð¡</div>
+    <h2 style="color:#4A2E1E;font-size:1.4rem;font-weight:700;margin-bottom:6px;">Finca Ananda</h2>
+    <p style="color:#753E10;font-size:0.85rem;margin-bottom:28px;letter-spacing:0.05em;">EXKLUSIVER ZUGANG</p>
+    <input id="pwInput" type="password" placeholder="Passwort eingeben â¦" onkeydown="if(event.key==='Enter')checkPw()" style="width:100%;padding:14px 18px;border:2px solid #E8793C;border-radius:8px;font-size:1rem;font-family:'Montserrat',sans-serif;outline:none;margin-bottom:12px;color:#333;"/>
+    <button onclick="checkPw()" style="width:100%;padding:14px;background:#E8793C;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;">EINTRETEN</button>
+    <p id="pwErr" style="color:#c0392b;font-size:0.82rem;margin-top:10px;display:none;">Falsches Passwort. Bitte erneut versuchen.</p>
+  </div>
+</div>
+<script>
+(function(){
+  function checkPw(){
+    var v=document.getElementById('pwInput').value;
+    if(v==='Moharos2026'){
+      document.getElementById('pwGate').style.display='none';
+      sessionStorage.setItem('fa_auth','1');
+    } else {
+      document.getElementById('pwErr').style.display='block';
+      document.getElementById('pwInput').value='';
+      document.getElementById('pwInput').focus();
+    }
+  }
+  window.checkPw=checkPw;
+  if(sessionStorage.getItem('fa_auth')==='1'){
+    document.addEventListener('DOMContentLoaded',function(){
+      document.getElementById('pwGate').style.display='none';
+    });
+  }
+})();
+</script>
 
 
 <!-- NAV -->
@@ -305,7 +337,7 @@
     <img src="https://fincaananda.com/wp-content/uploads/2022/12/logo_v2-1.png" alt="Finca Ananda"/>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">Übersicht</a></li><li class="sep">|</li>
+    <li><a href="#about">Ãbersicht</a></li><li class="sep">|</li>
     <li><a href="#nutzung">Nutzung</a></li><li class="sep">|</li>
     <li><a href="#retreat">Retreat</a></li><li class="sep">|</li>
     <li><a href="#stall">Reitstall</a></li><li class="sep">|</li>
@@ -342,14 +374,14 @@
     <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt=""/></div>
     <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt=""/></div>
   </div>
-  <div class="hero-badge">✦ Off-Market · Manilva, Costa del Sol · Streng Vertraulich ✦</div>
+  <div class="hero-badge">â¦ Off-Market Â· Manilva, Costa del Sol Â· Streng Vertraulich â¦</div>
 </section>
 
 <!-- TAGLINE -->
 <section class="tagline" id="about">
-  <span class="overline">✦ Finca Ananda · Manilva · Costa del Sol · Direktangebot vom Eigentümer</span>
-  <h1><strong>Finca Ananda</strong> —<br>Ein Anwesen. Unendliche Möglichkeiten.</h1>
-  <p>Manilva, Costa del Sol. Ca. 5 Hektar. Meerblick. Reitstall. Yoga-Retreat-Infrastruktur. Mehrere Wohneinheiten. Alles bereits in Betrieb gewesen — alles bereit für das Nächste. Off-Market, exklusiv, einmalig.</p>
+  <span class="overline">â¦ Finca Ananda Â· Manilva Â· Costa del Sol Â· Direktangebot vom EigentÃ¼mer</span>
+  <h1><strong>Finca Ananda</strong> â<br>Ein Anwesen. Unendliche MÃ¶glichkeiten.</h1>
+  <p>Manilva, Costa del Sol. Ca. 5 Hektar. Meerblick. Reitstall. Yoga-Retreat-Infrastruktur. Mehrere Wohneinheiten. Alles bereits in Betrieb gewesen â alles bereit fÃ¼r das NÃ¤chste. Off-Market, exklusiv, einmalig.</p>
 </section>
 
 <!-- WAVE -->
@@ -357,49 +389,49 @@
   <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg>
 </div>
 
-<!-- NUTZUNGSMÖGLICHKEITEN -->
+<!-- NUTZUNGSMÃGLICHKEITEN -->
 <section class="nutzung" id="nutzung">
   <div class="section-header">
-    <span class="overline">✦ Sechs Wege, diese Finca zu erleben</span>
-    <h2>Was ist mit Finca Ananda möglich?</h2>
-    <p>Dieses Anwesen ist keine gewöhnliche Immobilie. Es ist eine lebendige Infrastruktur — vielseitig, sofort nutzbar und bereit für Ihre Vision.</p>
+    <span class="overline">â¦ Sechs Wege, diese Finca zu erleben</span>
+    <h2>Was ist mit Finca Ananda mÃ¶glich?</h2>
+    <p>Dieser Anwesen ist keine gewÃ¶hnliche Immobilie. Es ist eine lebendige Infrastruktur â vielseitig, sofort nutzbar und bereit fÃ¼r Ihre Vision.</p>
   </div>
   <div class="nutzung-grid">
     <div class="n-card">
       <div class="n-num">01</div>
       <span class="badge badge-orange">Privat</span>
       <h3>Privater Wohnsitz</h3>
-      <p>Im Haupthaus wohnen, die Casitas für Familie oder Personal nutzen — Pool, Meerblick, Pferde direkt vor der Tür. Privatleben auf höchstem Niveau.</p>
+      <p>Im Haupthaus wohnen, die Casitas fÃ¼r Familie oder Personal nutzen â Pool, Meerblick, Pferde direkt vor der TÃ¼r. Privatleben auf hÃ¶chstem Niveau.</p>
     </div>
     <div class="n-card">
       <div class="n-num">02</div>
       <span class="badge badge-orange">Reit-Sport</span>
-      <h3>Privates Reitgestüt</h3>
-      <p>Professionelle Stallanlage mit eigenem Reitplatz. Einzelne Boxen und der Platz sind separat vermietbar — ein bewährtes Modell mit laufenden Einnahmen.</p>
+      <h3>Privates ReitgestÃ¼t</h3>
+      <p>Professionelle Stallanlage mit eigenem Reitplatz. Einzelne Boxen und der Platz sind separat vermietbar â ein bewÃ¤hrtes Modell mit laufenden Einnahmen.</p>
     </div>
     <div class="n-card">
       <div class="n-num">03</div>
       <span class="badge badge-blue">Wellness</span>
       <h3>Yoga &amp; Wellness Retreat</h3>
-      <p>Bereits als Retreat-Center betrieben — Yoga-Zelt, Plattformen, Seminarflächen, Gästeküche, Casitas und Tiny Houses stehen bereit. Sofort aktivierbar.</p>
+      <p>Bereits als Retreat-Center betrieben â Yoga-Zelt, Plattformen, SeminarflÃ¤chen, GÃ¤stekÃ¼che, Casitas und Tiny Houses stehen bereit. Sofort aktivierbar.</p>
     </div>
     <div class="n-card">
       <div class="n-num">04</div>
       <span class="badge badge-green">Events</span>
       <h3>Seminar &amp; Event Center</h3>
-      <p>Workshops, Retreats, Hochzeiten, Firmenevents. Küche, Terrassen, Garten und mehrere Unterkünfte bilden eine vollständige Event-Infrastruktur.</p>
+      <p>Workshops, Retreats, Hochzeiten, Firmenevents. KÃ¼che, Terrassen, Garten und mehrere UnterkÃ¼nfte bilden eine vollstÃ¤ndige Event-Infrastruktur.</p>
     </div>
     <div class="n-card">
       <div class="n-num">05</div>
       <span class="badge badge-gold">Investment</span>
-      <h3>Vollständige Vermietung</h3>
-      <p>Das gesamte Anwesen als exklusives Mietobjekt — Retreats, Hochzeiten, Pferdesport-Kurse. Alles vorhanden, alles erprobt.</p>
+      <h3>VollstÃ¤ndige Vermietung</h3>
+      <p>Das gesamte Anwesen als exklusives Mietobjekt â Retreats, Hochzeiten, Pferdesport-Kurse. Alles vorhanden, alles erprobt.</p>
     </div>
     <div class="n-card">
       <div class="n-num">06</div>
       <span class="badge badge-dark">Hybrid</span>
       <h3>Kombination &amp; Hybrid</h3>
-      <p>Haupthaus privat — Casitas &amp; Tiny Houses vermieten — Retreat-Flächen öffnen — Boxen verpachten. Die Finca trägt sich zum Teil selbst.</p>
+      <p>Haupthaus privat â Casitas &amp; Tiny Houses vermieten â Retreat-FlÃ¤chen Ã¶ffnen â Boxen verpachten. Die Finca trÃ¤gt sich zum Teil selbst.</p>
     </div>
   </div>
 </section>
@@ -412,14 +444,14 @@
 <!-- KAUFARGUMENT -->
 <section class="kaufargument">
   <div class="section-header">
-    <span class="overline">✦ Das Besondere dieser Finca</span>
+    <span class="overline">â¦ Das Besondere dieser Finca</span>
     <h2 style="color:white;">Finca Ananda hat dieses Konzept<br><em style="font-style:italic;color:rgba(255,255,255,.55);">bereits erfolgreich gelebt.</em></h2>
   </div>
-  <p class="quote-block">"Internationale Gäste haben hier Yoga-Retreats erlebt, Pferde wurden gehalten, Veranstaltungen haben stattgefunden. Die Infrastruktur steht. Der Ruf ist aufgebaut. Sie übernehmen — und gestalten neu."</p>
+  <p class="quote-block">"Internationale GÃ¤ste haben hier Yoga-Retreats erlebt, Pferde wurden gehalten, Veranstaltungen haben stattgefunden. Die Infrastruktur steht. Der Ruf ist aufgebaut. Sie Ã¼bernehmen â und gestalten neu."</p>
   <div class="args-grid">
-    <div class="arg"><div class="arg-num">01</div><h3>Einmalig an der Costa del Sol</h3><p>Ein Anwesen mit Reitstall, Retreat-Infrastruktur, mehreren Wohneinheiten und Meerblick — vollständig und sofort nutzbar. Diese Kombination gibt es hier nicht zweimal.</p></div>
-    <div class="arg"><div class="arg-num">02</div><h3>Manilva — Lage mit Zukunft</h3><p>Zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Der Markt für Luxus-Landgüter in dieser Zone steigt — und bleibt stabil.</p></div>
-    <div class="arg"><div class="arg-num">03</div><h3>Bewährtes Konzept</h3><p>Das Retreat-Konzept ist nicht neu erfunden — es funktioniert bereits. Sie übernehmen Energie, Ruf und funktionierende Infrastruktur. Kein Aufbau. Nur Gestaltung.</p></div>
+    <div class="arg"><div class="arg-num">01</div><h3>Einmalig an der Costa del Sol</h3><p>Ein Anwesen mit Reitstall, Retreat-Infrastruktur, mehreren Wohneinheiten und Meerblick â vollstÃ¤ndig und sofort nutzbar. Diese Kombination gibt es hier nicht zweimal.</p></div>
+    <div class="arg"><div class="arg-num">02</div><h3>Manilva â Lage mit Zukunft</h3><p>Zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Der Markt fÃ¼r Luxus-LandgÃ¼ter in dieser Zone steigt â und bleibt stabil.</p></div>
+    <div class="arg"><div class="arg-num">03</div><h3>BewÃ¤hrtes Konzept</h3><p>Das Retreat-Konzept ist nicht neu erfunden â es funktioniert bereits. Sie Ã¼bernehmen Energie, Ruf und funktionierende Infrastruktur. Kein Aufbau. Nur Gestaltung.</p></div>
   </div>
 </section>
 
@@ -430,14 +462,14 @@
 
 <!-- HIGHLIGHTS -->
 <section class="highlights">
-  <span class="overline">✦ Ausstattung auf einen Blick ✦</span>
+  <span class="overline">â¦ Ausstattung auf einen Blick â¦</span>
   <div class="hl-grid">
-    <div class="hl"><div class="hl-tag">Haupthaus</div><h3>3 Schlafzimmer</h3><p>Repräsentatives Hauptgebäude mit 3 Schlafzimmern, Wohnräumen, Küche, Pool und Panoramablick auf das Mittelmeer.</p></div>
-    <div class="hl"><div class="hl-tag">Casita 1 &amp; 2</div><h3>Je 2 Schlafzimmer</h3><p>Zwei vollständig autarke Casitas mit je 2 Schlafzimmern, Küche, Bad und WC. Ideal für Personal, Trainer oder separate Vermietung.</p></div>
-    <div class="hl"><div class="hl-tag">Tiny Houses</div><h3>Je 1 Doppelbett</h3><p>Charmante Tiny Houses, jedes mit eigenem Doppelbett — perfekt für Retreat-Gäste oder als zusätzliche Unterkunft.</p></div>
-    <div class="hl"><div class="hl-tag">Reitstall</div><h3>8 Boxen · 9 Paddocks</h3><p>8 professionelle Pferdeboxen, 9 Paddocks, Reitplatz 20×60 m — direkte Verbindung zu allen Außenanlagen.</p></div>
-    <div class="hl"><div class="hl-tag">Grundstück</div><h3>Ca. 5 Hektar</h3><p>Rund 5 Hektar in Manilva, Costa del Sol — Meerblick, alte Olivenbäume, natürliche Quellen, ruhige Lage.</p></div>
-    <div class="hl"><div class="hl-tag">Status</div><h3>Off-Market</h3><p>Kein öffentliches Inserat. Nur für vorqualifizierte Käufer. Diskrete Verhandlung über Simone Moharos.</p></div>
+    <div class="hl"><div class="hl-tag">Haupthaus</div><h3>3 Schlafzimmer</h3><p>ReprÃ¤sentatives HauptgebÃ¤ude mit 3 Schlafzimmern, WohnrÃ¤umen, KÃ¼che, Pool und Panoramablick auf das Mittelmeer.</p></div>
+    <div class="hl"><div class="hl-tag">Casita 1 &amp; 2</div><h3>Je 2 Schlafzimmer</h3><p>Zwei vollstÃ¤ndig autarke Casitas mit je 2 Schlafzimmern, KÃ¼che, Bad und WC. Ideal fÃ¼r Personal, Trainer oder separate Vermietung.</p></div>
+    <div class="hl"><div class="hl-tag">Tiny Houses</div><h3>Je 1 Doppelbett</h3><p>Charmante Tiny Houses, jedes mit eigenem Doppelbett â perfekt fÃ¼r Retreat-GÃ¤ste oder als zusÃ¤tzliche Unterkunft.</p></div>
+    <div class="hl"><div class="hl-tag">Reitstall</div><h3>8 Boxen Â· 9 Paddocks</h3><p>8 professionelle Pferdeboxen, 9 Paddocks, Reitplatz 20Ã60 m â direkte Verbindung zu allen AuÃenanlagen.</p></div>
+    <div class="hl"><div class="hl-tag">GrundstÃ¼ck</div><h3>Ca. 5 Hektar</h3><p>Rund 5 Hektar in Manilva, Costa del Sol â Meerblick, alte OlivenbÃ¤ume, natÃ¼rliche Quellen, ruhige Lage.</p></div>
+    <div class="hl"><div class="hl-tag">Status</div><h3>Off-Market</h3><p>Kein Ã¶ffentliches Inserat. Nur fÃ¼r vorqualifizierte KÃ¤ufer. Diskrete Verhandlung Ã¼ber Simone Moharos.</p></div>
   </div>
 </section>
 
@@ -445,14 +477,14 @@
 <section class="manilva-strip">
   <div class="manilva-inner">
     <div class="manilva-text">
-      <span class="overline">✦ Die Lage macht den Unterschied</span>
-      <h2>Manilva —<br>Natur, so weit das Auge reicht.</h2>
-      <p>Wer Marbella kennt, weiß: es ist schön — aber längst nicht mehr still. Wer Manilva kennt, versteht sofort den Unterschied. Hier beginnt echte andalusische Natur, hier enden die Touristenmassen.</p>
-      <p>Finca Ananda liegt in diesem seltenen Übergangsbereich: nah genug an allem, weit genug weg vom Trubel. Berge im Rücken, Meer im Blick, Olivenbäume und Stille — und trotzdem in 20 Minuten in Marbella.</p>
+      <span class="overline">â¦ Die Lage macht den Unterschied</span>
+      <h2>Manilva â<br>Natur, so weit das Auge reicht.</h2>
+      <p>Wer Marbella kennt, weiÃ: es ist schÃ¶n â aber lÃ¤ngst nicht mehr still. Wer Manilva kennt, versteht sofort den Unterschied. Hier beginnt echte andalusische Natur, hier enden die Touristenmassen.</p>
+      <p>Finca Ananda liegt in diesem seltenen Ãbergangsbereich: nah genug an allem, weit genug weg vom Trubel. Berge im RÃ¼cken, Meer im Blick, OlivenbÃ¤ume und Stille â und trotzdem in 20 Minuten in Marbella.</p>
     </div>
     <div class="manilva-facts">
       <div class="m-fact"><div class="val">20 min</div><div class="key">nach Marbella</div></div>
-      <div class="m-fact"><div class="val">45 min</div><div class="key">Flughafen Málaga</div></div>
+      <div class="m-fact"><div class="val">45 min</div><div class="key">Flughafen MÃ¡laga</div></div>
       <div class="m-fact"><div class="val">Natur</div><div class="key">Soweit das Auge reicht</div></div>
       <div class="m-fact"><div class="val">Kein</div><div class="key">Massentourismus</div></div>
     </div>
@@ -467,15 +499,15 @@
 <!-- HAUPTHAUS -->
 <section class="prop-wrap" id="haupthaus">
   <div class="prop-inner">
-    <div class="prop-img"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Haupthaus"/><div class="room-badge">3 Schlafzimmer · Haupthaus</div></div>
+    <div class="prop-img"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Haupthaus"/><div class="room-badge">3 Schlafzimmer Â· Haupthaus</div></div>
     <div class="prop-text">
-      <span class="overline">✦ Das Herzstück der Finca</span>
+      <span class="overline">â¦ Das HerzstÃ¼ck der Finca</span>
       <h2>Haupthaus mit Meerblick &amp; Panoramaterrasse</h2>
-      <p>Das Hauptgebäude verbindet andalusische Architektur mit zeitgemäßem Komfort. Drei Schlafzimmer, lichtdurchflutete Wohnräume und eine großzügige Terrasse mit direktem Blick auf das Mittelmeer.</p>
-      <p>Direkte Sichtverbindung zum Stall und zur Anlage — morgens aufwachen, Pferde und Meer sehen.</p>
+      <p>Das HauptgebÃ¤ude verbindet andalusische Architektur mit zeitgemÃ¤Ãem Komfort. Drei Schlafzimmer, lichtdurchflutete WohnrÃ¤ume und eine groÃzÃ¸gige Terrasse mit direktem Blick auf das Mittelmeer.</p>
+      <p>Direkte Sichtverbindung zum Stall und zur Anlage â morgens aufwachen, Pferde und Meer sehen.</p>
       <ul class="prop-list">
         <li>3 Schlafzimmer</li><li>Offenes Wohnzimmer</li>
-        <li>Vollausgestattete Küche</li><li>Mehrere Bäder</li>
+        <li>Vollausgestattete KÃ¼che</li><li>Mehrere BÃ¤der</li>
         <li>Pool &amp; Terrasse</li><li>Meerblick</li>
         <li>Direktzugang Stall</li><li>Hochwertige Materialien</li>
       </ul>
@@ -486,18 +518,18 @@
 <!-- WOHNEINHEITEN -->
 <section class="wohn-wrap">
   <div class="section-header">
-    <span class="overline">✦ Weitere Wohneinheiten auf dem Anwesen</span>
+    <span class="overline">â¦ Weitere Wohneinheiten auf dem Anwesen</span>
     <h2 style="color:var(--brown);">Casitas &amp; Tiny Houses</h2>
-    <p>Neben dem Haupthaus befinden sich zwei vollständig autarke Casitas sowie zwei Tiny Houses auf dem Gelände — nutzbar für Personal, Retreat-Gäste oder separate Vermietung.</p>
+    <p>Neben dem Haupthaus befinden sich zwei vollstÃ¤ndig autarke Casitas sowie zwei Tiny Houses auf dem GelÃ¤nde â nutzbar fÃ¸r Personal, Retreat-GÃ¤ste oder separate Vermietung.</p>
   </div>
   <div class="wohn-grid">
     <div class="wohn-card">
       <span class="wohn-tag">Casita 1</span>
       <h3>2 Schlafzimmer</h3>
-      <p class="wohn-desc">Vollständig autarke Einheit mit eigenem Eingang und Terrasse — unabhängig vom Haupthaus.</p>
+      <p class="wohn-desc">VollstÃ¤ndig autarke Einheit mit eigenem Eingang und Terrasse â unabhÃ¤ngig vom Haupthaus.</p>
       <ul>
         <li>2 Schlafzimmer</li>
-        <li>Küche · Bad · WC</li>
+        <li>KÃ¼che Â· Bad Â· WC</li>
         <li>Eigener Eingang &amp; Terrasse</li>
         <li>Separat vermietbar</li>
       </ul>
@@ -505,10 +537,10 @@
     <div class="wohn-card">
       <span class="wohn-tag">Casita 2</span>
       <h3>2 Schlafzimmer</h3>
-      <p class="wohn-desc">Zweite autarke Einheit — gleiche Infrastruktur wie Casita 1, vollständig unabhängig nutzbar.</p>
+      <p class="wohn-desc">Zweite autarke Einheit â gleiche Infrastruktur wie Casita 1, vollstÃ¤ndig unabhÃ¤ngig nutzbar.</p>
       <ul>
         <li>2 Schlafzimmer</li>
-        <li>Küche · Bad · WC</li>
+        <li>KÃ¸che Â· Bad Â· WC</li>
         <li>Eigener Eingang &amp; Terrasse</li>
         <li>Separat vermietbar</li>
       </ul>
@@ -516,11 +548,11 @@
     <div class="wohn-card">
       <span class="wohn-tag" style="background:var(--wood);">2 Tiny Houses</span>
       <h3>Je 1 Doppelbett</h3>
-      <p class="wohn-desc">Zwei kleine Unterkünfte eingebettet in Olivenbäume und Natur — ideal für Retreat-Gäste.</p>
+      <p class="wohn-desc">Zwei kleine UnterkÃ¼nfte eingebettet in OlivenbÃ¤ume und Natur â mdeal fÃ¼r Retreat-GÃ¤ste.</p>
       <ul>
         <li>Je 1 Doppelbett</li>
         <li>In Natur eingebettet</li>
-        <li>Rückzug &amp; Stille</li>
+        <li>RÃ¼ckzug &amp; Stille</li>
         <li>Flexibel belegbar</li>
       </ul>
     </div>
@@ -531,14 +563,14 @@
 <section class="retreat-wrap" id="retreat">
   <div class="retreat-inner">
     <div>
-      <span class="overline">✦ Etablierte Yoga &amp; Retreat Infrastruktur</span>
-      <h2>Alles vorhanden für ein Retreat Center</h2>
-      <p>Finca Ananda wurde bereits erfolgreich als Yoga- und Wellness-Retreat-Center betrieben. Yoga-Plattformen, Seminarräume, Außenflächen, Gästeküche, Casita 1 &amp; 2, Tiny Houses — sofort nutzbar.</p>
-      <p>Internationale Gäste haben hier Retreats erlebt, Workshops stattgefunden. Die Energie und der Ruf sind aufgebaut. Sie übernehmen ein bewährtes Konzept und entwickeln es weiter — oder ganz neu.</p>
+      <span class="overline">â¦ Etablierte Yoga &amp; Retreat Infrastruktur</span>
+      <h2>Alles vorhanden fÃ¼r ein Retreat Center</h2>
+      <p>Finca Ananda wurde bereits erfolgreich als Yoga- und Wellness-Retreat-Center betrieben. Yoga-Plattformen, SeminarrÃ¤ume, AuÃenflÃ¤chen, GÃ¤stekÃ¼che, Casita 1 &amp; 2, Tiny Houses â sofort nutzbar.</p>
+      <p>Internationale GÃ¤ste haben hier Retreats erlebt, Workshops stattgefunden. Die Energie und der Ruf sind aufgebaut. Sie Ã¸bernehmen ein bewÃ¤hrtes Konzept und entwickeln es weiter â oder ganz neu.</p>
       <div class="r-stats">
-        <div class="r-stat"><div class="num">2</div><div class="lbl">Casitas für Gäste</div></div>
+        <div class="r-stat"><div class="num">2</div><div class="lbl">Casitas fÃ¸r GÃ¤ste</div></div>
         <div class="r-stat"><div class="num">2</div><div class="lbl">Tiny Houses</div></div>
-        <div class="r-stat"><div class="num">ca. 5 ha</div><div class="lbl">Naturgelände</div></div>
+        <div class="r-stat"><div class="num">ca. 5 ha</div><div class="lbl">NaturgelÃ¤nde</div></div>
         <div class="r-stat"><div class="num">1</div><div class="lbl">Yoga Zelt</div></div>
       </div>
     </div>
@@ -554,20 +586,20 @@
 <section class="stall-wrap" id="stall">
   <div class="stall-inner">
     <div class="prop-text">
-      <span class="overline">✦ Professionelle Reitsportinfrastruktur</span>
+      <span class="overline">â¦ Professionelle Reitsportinfrastruktur</span>
       <h2>Reitstall, Paddocks &amp; Reitplatz</h2>
-      <p>Der Stall umfasst 8 professionelle Pferdeboxen mit optimaler Belüftung und direktem Zugang zu 9 Paddocks. Der eigene Reitplatz (20×60 m) liegt auf dem ca. 5 Hektar großen Gelände — ganzjährig nutzbar.</p>
-      <p>Einzelne Boxen und der Reitplatz können an lokale Reiter vermietet werden — ein bewährtes Modell und verlässliche Zusatzeinnahme.</p>
+      <p>Der Stall umfasst 8 professionelle Pferdeboxen mit optimaler BelÃ¼ftung und direktem Zugang zu 9 Paddocks. Der eigene Reitplatz (20Ã60 m) liegt auf dem ca. 5 Hektar groÃen GelÃ¤nde â ganzjÃ¤hrig nutzbar.</p>
+      <p>Einzelne Boxen und der Reitplatz kÃ¶nnen an lokale Reiter vermietet werden â ein bewÃ¤hrtes Modell und verlÃ¤ssliche Zusatzeinnahme.</p>
       <ul class="prop-list">
         <li>8 Pferdeboxen</li><li>9 Paddocks</li>
-        <li>Reitplatz 20×60 m</li><li>Ca. 5 Hektar Gelände</li>
+        <li>Reitplatz 20Ã60 m</li><li>Ca. 5 Hektar GelÃ¤nde</li>
         <li>Sattel- &amp; Putzraum</li><li>Heu- &amp; Futterraum</li>
         <li>Boxen vermietbar</li><li>Reitplatz vermietbar</li>
       </ul>
     </div>
     <div class="prop-img">
       <img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt="Reitplatz Finca Ananda" style="height:500px;"/>
-      <div class="room-badge">Reitplatz 20×60 m · 8 Boxen · 9 Paddocks</div>
+      <div class="room-badge">Reitplatz 20Ã60 m Â· 8 Boxen Â· 9 Paddocks</div>
     </div>
   </div>
 </section>
@@ -575,7 +607,7 @@
 <!-- GALLERY -->
 <section class="gallery-wrap" id="galerie">
   <div class="section-header">
-    <span class="overline">✦ Finca Ananda — Alle Impressionen</span>
+    <span class="overline">â¦ Finca Ananda â Alle Impressionen</span>
     <h2>Das Anwesen in Bildern</h2>
   </div>
   <div class="g-grid">
@@ -585,14 +617,14 @@
     <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_seaview.jpg" alt="Meerblick Aussicht"/></div>
     <!-- Row 2 continued (fills the right side of lg) -->
     <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_yoga.jpg" alt="Yoga Terrasse"/></div>
-    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt="Außenbereich"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt="AuÃenbereich"/></div>
     <!-- Row 3 -->
     <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt="Abendstimmung"/></div>
-    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_spain_jpg.jpg" alt="Hauptgebäude"/></div>
-    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain.jpg" alt="Finca Übersicht"/></div>
-    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Finca Gebäude"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_spain_jpg.jpg" alt="HauptgebÃ¤ude"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain.jpg" alt="Finca Ãbersicht"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Finca GebÃ¤ude"/></div>
     <!-- Row 4 -->
-    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_garden_spain_jpg.jpg" alt="Garten &amp; Gelände"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_garden_spain_jpg.jpg" alt="Garten &amp; GelÃ¤nde"/></div>
     <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt="Pferde &amp; Reitanlage"/></div>
     <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_studio.jpg" alt="Yoga Zelt"/></div>
   </div>
@@ -602,30 +634,30 @@
 <section class="killer">
   <div class="killer-inner">
     <div class="killer-headline">
-      <span class="overline">✦ Das entscheidende Argument</span>
-      <h2>€ 5.000.000 — für ein Anwesen,<br>das mit <em>Herz</em> entstanden ist.</h2>
-      <p>Hier wurde nicht einfach gebaut. Jeder Stein, jede Anlage, jeder Baum mit Sorgfalt und Liebe gesetzt. Was Sie übernehmen, hat eine Seele — und die lässt sich nicht neu kaufen.</p>
+      <span class="overline">â¦ Das entscheidende Argument</span>
+      <h2>â¬ 5.000.000 â fÃ¼r ein Anwesen,<br>das mit <em>Herz</em> entstanden ist.</h2>
+      <p>Hier wurde nicht einfach gebaut. Jeder Stein, jede Anlage, jeder Baum mit Sorgfalt und Liebe gesetzt. Was Sie Ã¼berneimen, hat eine Seele â und die lÃ¤sst sich nicht neu kaufen.</p>
     </div>
     <div class="killer-grid">
       <div class="k-item">
         <div class="k-num">01</div>
         <h3>Jahrelang mit Hingabe gestaltet.</h3>
-        <p>Diese Finca ist kein Bauprojekt — sie ist ein gelebter Ort. Retreat-Gäste haben hier innere Ruhe gefunden, Pferde wurden mit Fürsorge gehalten, jede Ecke mit Bedacht eingerichtet. Was Sie übernehmen, trägt diese Geschichte in sich.</p>
+        <p>Diese Finca ist kein Bauprojekt â sie ist ein gelebter Ort. Retreat-GÃ¤ste haben hier innere Ruhe gefunden, Pferde wurden mit FÃ¼rsorge gehalten, jede Ecke mit Bedacht eingerichtet. Was Sie Ã¸bernehmen, trÃ¤gt diese Geschichte in sich.</p>
       </div>
       <div class="k-item">
         <div class="k-num">02</div>
         <h3>Mehrere Einnahmen. Sofort.</h3>
-        <p>Casitas vermieten. Boxen verpachten. Reitplatz an lokale Reiter vermieten. Retreats anbieten. Jede dieser Quellen ist einzeln rentabel — zusammen trägt sich die Finca zum Teil selbst.</p>
+        <p>Casitas vermieten. Boxen verpachten. Reitplatz an lokale Reiter vermieten. Retreats anbieten. Jede dieser Quellen ist einzeln rentabel â zusammen trÃ¤gt sich die Finca zum Teil selbst.</p>
       </div>
       <div class="k-item">
         <div class="k-num">03</div>
         <h3>Einmalig. Nicht wiederholbar.</h3>
-        <p>5 Hektar. Reitstall. Retreat-Infrastruktur. Meerblick. Manilva. Diese Kombination gibt es an der Costa del Sol kein zweites Mal — und sie lässt sich auch nicht ein zweites Mal so aufbauen.</p>
+        <p>5 Hektar. Reitstall. Retreat-Infrastruktur. Meerblick. Manilva. Diese Kombination gibt es an der Costa del Sol kein zweites Mal â und sie lÃ¤sst sich auch nicht ein zweites Mal so aufbauen.</p>
       </div>
     </div>
     <div class="killer-cta">
-      <p>Dieses Anwesen wird nicht inseriert. Nur für Sie.</p>
-      <a href="#kontakt">Jetzt Kontakt aufnehmen →</a>
+      <p>Dieses Anwesen wird nicht inseriert. Nur fÃ¼r Sie.</p>
+      <a href="#kontakt">Jetzt Kontakt aufnehmen â</a>
     </div>
   </div>
 </section>
@@ -638,18 +670,18 @@
 <!-- CONTACT -->
 <section class="contact" id="kontakt">
   <div class="contact-inner">
-    <span class="overline">✦ Unverbindlich &amp; Diskret</span>
+    <span class="overline">â¦ Unverbindlich &amp; Diskret</span>
     <h2>Finca Ananda anfragen</h2>
-    <p>Dieses Anwesen wird ausschließlich auf Anfrage und unter strikter Vertraulichkeit vermittelt. Sprechen Sie direkt mit <strong>Simone Moharos</strong> — persönlich, diskret, ohne Umwege.<br><br>
-      <a href="tel:+34681336692" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">📞 +34 681 336 692</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href="https://wa.me/34681336692" target="_blank" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">💬 WhatsApp</a>
+    <p>Dieses Anwesen wird ausschlieÃlich auf Anfrage und unter strikter Vertraulichkeit vermittelt. Sprechen Sie direkt mit <strong>Simone Moharos</strong> â persÃ¶nlich, diskret, ohne Umwege.<br><br>
+      <a href="tel:+34681336692" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">ð +34 681 336 692</a>
+      &nbsp;&nbsp;Â·&nbsp;&nbsp;
+      <a href="https://wa.me/34681336692" target="_blank" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">ð¬ WhatsApp</a>
     </p>
     <form class="c-form" onsubmit="return handleSubmit(event)">
       <input type="text" placeholder="Ihr Name" required/>
       <input type="tel" placeholder="Telefon"/>
       <input class="full" type="email" placeholder="E-Mail-Adresse" required/>
-      <textarea class="full" placeholder="Ihre Nachricht — Nutzungsidee, Fragen, Besichtigungswunsch …"></textarea>
+      <textarea class="full" placeholder="Ihre Nachricht â Nutzungsidee, Fragen, Besichtigungswunsch â¦"></textarea>
       <button type="submit" class="btn-send">Anfrage senden</button>
     </form>
   </div>
@@ -659,36 +691,36 @@
 <footer>
   <div class="fl">
     <strong>MOHAROS Marbella S.L.</strong>
-    Simone Moharos · +34 681 336 692 · simonemoharos@gmail.com
+    Simone Moharos Â· +34 681 336 692 Â· simonemoharos@gmail.com
   </div>
   <div class="f-links">
     <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg></a>
-    <a href="https://wa.me/34681336692" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.06L2 22l5.09-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.43c-.19.55-1.11 1.05-1.52 1.1-.41.05-.79.25-2.68-.56-2.27-.96-3.72-3.27-3.83-3.42-.11-.15-.9-1.2-.9-2.28s.57-1.62.78-1.84c.2-.22.44-.27.59-.27h.42c.14 0 .32-.05.49.37l.7 1.74c.06.15.1.32.02.48l-.27.48-.41.46c-.13.14-.27.29-.12.57.16.28.69 1.13 1.48 1.83.81.71 1.5.93 1.78 1.04.28.1.44.08.6-.05.16-.14.67-.78.85-1.04.18-.27.36-.22.6-.13l1.7.8c.27.13.43.19.49.3.05.1.05.59-.14 1.14z"/></svg></a>
+    <a href="https://wa.me/34681336692" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.06L2 22l5.09-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.43c-.19.55-1.11 1.05-1.52 1.1-.41.05-.79.25-2.68-.56-2.27-.96-3.72-3.27-3.83-3.42-.11-.15-.9-1.2-.9-2.28s.57-1.62.78-1.84c.2-.22.44-.27.59-.27h.42c.14 0 .32-.05.49.37l.7 1.74c.06.15.1.32.02.48l-.27.48-.41.46c-.13.14-.27.29-.12.57.16.28.69 1.13 1.48 1.83.81.71 1.5.93 1.78 1.04.28.1.44.08.6-.05.16-.14.67-.78.85-1.04.18-.27.36-.22.6-.13l1.728c.27.13.43.19.49.3.05.1.05.59-.14 1.14z"/></svg></a>
     <a href="mailto:simonemoharos@gmail.com" title="E-Mail"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 4l10 9 10-9"/></svg></a>
   </div>
 </footer>
-<div class="footer-bottom">© 2026 MOHAROS Marbella S.L. · Simone Moharos · Finca Ananda, Manilva – Off-Market Exklusiv-Angebot · Streng Vertraulich</div>
+<div class="footer-bottom">Â© 2026 MOHAROS Marbella S.L. Â· Simone Moharos Â· Finca Ananda, Manilva â Off-Market Exklusiv-Angebot Â· Streng Vertraulich</div>
 
 <!-- AI CONCIERGE -->
 <div class="chat-bubble">
   <div class="chat-win" id="chatWin">
     <div class="chat-head">
       <div class="chat-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div><div class="chat-ti">AI Concierge · Finca Ananda</div><div class="chat-su">Simone Moharos · Sofort verfügbar</div></div>
+      <div><div class="chat-ti">AI Concierge Â· Finca Ananda</div><div class="chat-su">Simone Moharos Â· Sofort verfÃ¼gbar</div></div>
       <div class="o-dot"></div>
     </div>
     <div class="chat-msgs" id="chatMsgs">
-      <div class="msg bot">Willkommen bei <strong>Finca Ananda</strong> 🐎🌿<br><br>Fragen Sie mich alles zu diesem Off-Market Anwesen in Manilva — diskret und sofort. Ich bin der Concierge von <strong>Simone Moharos</strong>.</div>
+      <div class="msg bot">Willkommen bei <strong>Finca Ananda</strong> ðð¿<br><br>Fragen Sie mich alles zu diesem Off-Market Anwesen in Manilva â diskret und sofort. Ich bin der Concierge von <strong>Simone Moharos</strong>.</div>
     </div>
     <div class="chat-sug" id="chatSug">
-      <button onclick="sug(this,'Was kann man mit der Finca machen?')">🏡 Nutzung</button>
-      <button onclick="sug(this,'Was ist mit dem Yoga Retreat?')">🧘 Retreat</button>
-      <button onclick="sug(this,'Wie viele Pferde passen auf das Anwesen?')">🐴 Pferde</button>
-      <button onclick="sug(this,'Wie viele Schlafzimmer hat das Anwesen?')">🛏 Zimmer</button>
-      <button onclick="sug(this,'Wo liegt die Finca genau?')">📍 Lage</button>
+      <button onclick="sug(this,'Was kann man mit der Finca machen?')">ð¡ Nutzung</button>
+      <button onclick="sug(this,'Was ist mit dem Yoga Retreat?')">ð§ Retreat</button>
+      <button onclick="sug(this,'Wie viele Pferde passen auf das Anwesen?')">ð´ Pferde</button>
+      <button onclick="sug(this,'Wie viele Schlafzimmer hat das Anwesen?')">ð Zimmer</button>
+      <button onclick="sug(this,'Wo liegt die Finca genau?')">ð Lage</button>
     </div>
     <div class="chat-inp">
-      <input type="text" id="chatIn" placeholder="Ihre Frage …" onkeydown="if(event.key==='Enter') send()"/>
+      <input type="text" id="chatIn" placeholder="Ihre Frage â¦" onkeydown="if(event.key==='Enter') send()"/>
       <button class="send-btn" onclick="send()"><svg viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
     </div>
   </div>
@@ -700,20 +732,20 @@
 
 <script>
 const R = {
-  nutzung:   "Finca Ananda ist außergewöhnlich vielseitig: **Privater Wohnsitz** mit Pferden, **Yoga & Wellness Retreat**, **Seminar & Event Center**, vollständige **Vermietung** oder eine intelligente **Kombination** aus allem.",
-  retreat:   "Finca Ananda war **bereits als Yoga-Retreat-Center in Betrieb**. Yoga-Plattformen, Seminarflächen, **Casita 1 &amp; 2**, Tiny Houses und Küche sind vorhanden. Kapazität: bis zu **50 Personen** tagsüber, **20–25 Übernachtungsgäste**.",
-  pferde:    "Der Reitstall bietet **8 Pferdeboxen**, **9 Paddocks** und einen professionellen **Reitplatz 20×60 m**. Einzelne Boxen und der Reitplatz sind auch **separat an lokale Reiter vermietbar** — bewährtes Zusatzeinkommen.",
-  preis:     "Der Verkaufspreis beträgt **€ 5.000.000,–**. Für qualifizierte Interessenten stellt Simone Moharos gerne ein Exposé bereit: 📞 +34 681 336 692",
-  besichtig: "Besichtigungen nach Vereinbarung — kontaktieren Sie **Simone Moharos** direkt: 📞 +34 681 336 692 oder per **WhatsApp**. Rückmeldung innerhalb von 24 Stunden.",
-  fengshui:  "Finca Ananda liegt in einer **Feng-Shui-Meisterlage**: Berge im Rücken (Schutz), Meer im Blick (Expansion), Quellen auf dem Grundstück, alte Olivenbäume. Alle **5 Elemente sind in Balance** — das macht den Ort so besonders.",
-  lage:      "**Manilva**, Costa del Sol — zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Meerblick, Berge, Natur. Eine der energetisch stärksten Lagen an der Küste.",
-  sz:        "Das **Haupthaus** hat **3 Schlafzimmer**, **Casita 1** und **Casita 2** je **2 Schlafzimmer** — dazu mehrere **Tiny Houses** mit je einem Doppelbett. Insgesamt 7+ Schlafeinheiten auf dem Anwesen.",
-  default:   "Für alle Details steht **Simone Moharos** persönlich zur Verfügung: 📞 +34 681 336 692 oder per WhatsApp. Oder stellen Sie mir gerne eine konkrete Frage zur Finca!"
+  nutzung:   "Finca Ananda ist auÃergewÃ¶hnlich vielseitig: **Privater Wohnsitz** mit Pferden, **Yoga & Wellness Retreat**, **Seminar & Event Center**, vollstÃ¤ndige **Vermietung** oder eine intelligente **Kombination** aus allem.",
+  retreat:   "Finca Ananda war **bereits als Yoga-Retreat-Center in Betrieb**. Yoga-Plattformen, SeminarflÃ¤chen, **Casita 1 &amp; 2**, Tiny Houses und KÃ¼che sind vorhanden. KapazitÃ¤t: bis zu **50 Personen** tagsÃ¼ber, **20â25 ÃbernachtungsgÃ¤ste**.",
+  pferde:    "Der Reitstall bietet **8 Pferdeboxen**, **9 Paddocks** und einen professionellen **Reitplatz 20Ã60 m**. Einzelne Boxen und der Reitplatz sind auch **separat an lokale Reiter vermietbar** â bewÃ¤hrtes Zusatzeinkommen.",
+  preis:     "Der Verkaufspreis betrÃ¤gt **â¬ 5.000.000,â**. FÃ¼r qualifizierte Interessenten stellt Simone Moharos gerne ein ExposÃ© bereit: ð +34 681 336 692",
+  besichtig: "Besichtigungen nach Vereinbarung â kontaktieren Sie **Simone Moharos** direkt: ð +34 681 336 692 oder per **WhatsApp**. RÃ¼ckmeldung innerhalb von 24 Stunden.",
+  fengshui:  "Finca Ananda liegt in einer **Feng-Shui-Meisterlage**: Berge im RÃ¼cken (Schutz), Meer im Blick (Expansion), Quellen auf dem GrundstÃ¼ck, alte OlivenbÃ¤ume. Alle **5 Elemente sind in Balance** â das macht den Ort so besonders.",
+  lage:      "**Manilva**, Costa del Sol â zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Meerblick, Berge, Natur. Eine der energetisch stÃ¤rksten Lagen an der KÃ¼ste.",
+  sz:        "Das **Haupthaus** hat **3 Schlafzimmer**, **Casita 1** und **Casita 2** je **2 Schlafzimmer** â dazu mehrere **Tiny Houses** mit je einem Doppelbett. Insgesamt 7+ Schlafeinheiten auf dem Anwesen.",
+  default:   "FÃ¼r alle Details steht **Simone Moharos** persÃ¶nlich zur VerfÃ¼gung: ð +34 681 336 692 oder per WhatsApp. Oder stellen Sie mir gerne eine konkrete Frage zur Finca!"
 };
 
 function getR(m) {
   const t = m.toLowerCase();
-  if (t.includes('nutzung')||t.includes('machen')||t.includes('möglich')||t.includes('konzept')||t.includes('verwend')) return R.nutzung;
+  if (t.includes('nutzung')||t.includes('machen')||t.includes('mÃ¶glich')||t.includes('konzept')||t.includes('verwend')) return R.nutzung;
   if (t.includes('yoga')||t.includes('retreat')||t.includes('wellness')||t.includes('seminar')||t.includes('event')) return R.retreat;
   if (t.includes('pferd')||t.includes('stall')||t.includes('box')||t.includes('reit')) return R.pferde;
   if (t.includes('preis')||t.includes('kost')||t.includes('euro')||t.includes('million')) return R.preis;
@@ -757,7 +789,7 @@ function sug(btn, txt) {
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-send');
-  btn.textContent = '✓ Vielen Dank! Simone meldet sich bald.';
+  btn.textContent = 'â Vielen Dank! Simone meldet sich bald.';
   btn.style.background = '#4caf50'; btn.style.color = 'white';
   setTimeout(() => { btn.textContent = 'Anfrage senden'; btn.style.background = ''; btn.style.color = ''; }, 4000);
   return false;
