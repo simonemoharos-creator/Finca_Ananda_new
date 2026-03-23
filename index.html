@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finca Ananda – Off-Market Exklusiv-Anwesen | Manilva | 5.000.000 €</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange:      #E8793C;
+      --orange-light:#F09060;
+      --brown:       #753E10;
+      --dark-brown:  #4A2E1E;
+      --dark:        #3C3C3C;
+      --white:       #FFFFFF;
+      --cream:       #FDF8F0;
+      --text:        #333333;
+      --gold:        #C9892A;
+      --water:       #4A7C8E;
+      --water-light: #EEF6F9;
+      --wood:        #5C7A4E;
+      --earth:       #8B7355;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+      z-index: 1000; padding: 10px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; list-style: none; }
+    .nav-links .sep { color: #ddd; padding: 0 2px; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 13px; transition: color .25s; }
+    .nav-links a:hover { color: var(--orange); }
+
+    /* HERO */
+    .hero { margin-top: 72px; position: relative; height: 620px; overflow: hidden; background: var(--dark-brown); }
+    .diamond-grid { position: absolute; top: -25%; left: -25%; width: 150%; height: 150%; display: grid; grid-template-columns: repeat(5,1fr); grid-template-rows: repeat(4,1fr); gap: 6px; transform: rotate(45deg); }
+    .d-item { overflow: hidden; position: relative; }
+    .d-item img { position: absolute; top: 50%; left: 50%; width: 145%; height: 145%; transform: translate(-50%,-50%) rotate(-45deg); object-fit: cover; }
+    .d-center { background: var(--dark-brown); display: flex; align-items: center; justify-content: center; grid-column: 3; grid-row: 2; }
+    .d-center-inner { transform: rotate(-45deg); text-align: center; padding: 12px; }
+    .d-center-inner img { width: 110px; height: auto; filter: brightness(0) invert(1); opacity: .9; }
+    .hero-badge { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); background: var(--orange); color: white; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 11px 36px; border-radius: 50px; z-index: 10; white-space: nowrap; box-shadow: 0 4px 20px rgba(232,121,60,.4); }
+
+    /* WAVE */
+    .wave { line-height: 0; overflow: hidden; }
+    .wave svg { display: block; width: 100%; }
+
+    /* TAGLINE */
+    .tagline { text-align: center; padding: 72px 40px 52px; }
+    .overline { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; display: block; }
+    .tagline h1 { font-size: 40px; font-weight: 300; color: var(--brown); line-height: 1.3; margin-bottom: 20px; }
+    .tagline h1 strong { font-weight: 800; }
+    .tagline > p { font-size: 15px; color: #666; line-height: 1.9; max-width: 640px; margin: 0 auto 36px; }
+    .price-badge { display: inline-block; background: var(--cream); border: 2px solid var(--orange); color: var(--brown); font-size: 26px; font-weight: 700; letter-spacing: 2px; padding: 16px 56px; border-radius: 4px; }
+    .price-badge span { display: block; font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+
+    /* NUTZUNGSMÖGLICHKEITEN */
+    .nutzung { background: var(--cream); padding: 80px 48px; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header h2 { font-size: 32px; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
+    .section-header p { font-size: 15px; color: #777; max-width: 580px; margin: 0 auto; line-height: 1.8; }
+    .nutzung-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .n-card { background: white; border-radius: 8px; padding: 36px 28px; border-top: 4px solid transparent; box-shadow: 0 4px 24px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s, border-top-color .3s; }
+    .n-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(0,0,0,.1); border-top-color: var(--orange); }
+    .n-num { font-size: 34px; font-weight: 800; color: var(--orange); opacity: .18; line-height: 1; margin-bottom: 12px; }
+    .n-card .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: white; padding: 3px 12px; border-radius: 50px; margin-bottom: 12px; }
+    .badge-orange { background: var(--orange); }
+    .badge-blue   { background: var(--water); }
+    .badge-green  { background: var(--wood); }
+    .badge-gold   { background: var(--gold); }
+    .badge-earth  { background: var(--earth); }
+    .badge-dark   { background: var(--dark-brown); }
+    .n-card h3 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--brown); margin-bottom: 10px; }
+    .n-card p { font-size: 13px; color: #777; line-height: 1.8; }
+
+    /* KAUFARGUMENT */
+    .kaufargument { background: var(--dark-brown); padding: 80px 48px; }
+    .kaufargument .section-header h2 { color: white; }
+    .kaufargument .section-header .overline { color: var(--orange); }
+    .quote-block { font-size: 16px; font-style: italic; font-weight: 300; color: rgba(255,255,255,.6); max-width: 680px; margin: 0 auto 56px; line-height: 1.85; border-left: 3px solid var(--orange); padding-left: 24px; }
+    .args-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+    .arg { background: rgba(255,255,255,.05); padding: 40px 34px; border-top: 3px solid transparent; transition: background .3s, border-top-color .3s; }
+    .arg:hover { background: rgba(255,255,255,.09); border-top-color: var(--orange); }
+    .arg-num { font-size: 40px; font-weight: 800; color: var(--orange); opacity: .3; line-height: 1; margin-bottom: 14px; }
+    .arg h3 { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: white; margin-bottom: 12px; }
+    .arg p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.68); line-height: 1.85; }
+
+    /* HIGHLIGHTS */
+    .highlights { background: var(--orange); padding: 68px 48px; }
+    .highlights .overline { text-align: center; color: rgba(255,255,255,.75); margin-bottom: 44px; }
+    .hl-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; max-width: 1000px; margin: 0 auto; }
+    .hl { padding: 34px 30px; border-right: 1px solid rgba(255,255,255,.2); }
+    .hl:nth-child(3n) { border-right: none; }
+    .hl:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,.2); }
+    .hl-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--orange); background: white; padding: 3px 12px; border-radius: 50px; margin-bottom: 12px; }
+    .hl h3 { font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: white; margin-bottom: 10px; }
+    .hl p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.82); line-height: 1.75; }
+
+    /* MANILVA STRIP */
+    .manilva-strip { background: var(--dark); padding: 70px 48px; }
+    .manilva-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .manilva-text .overline { color: var(--orange); }
+    .manilva-text h2 { font-size: 30px; font-weight: 700; color: white; margin-bottom: 18px; line-height: 1.25; }
+    .manilva-text p { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.9; margin-bottom: 16px; }
+    .manilva-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .m-fact { background: rgba(255,255,255,.05); border-left: 3px solid var(--orange); border-radius: 4px; padding: 16px 18px; }
+    .m-fact .val { font-size: 22px; font-weight: 800; color: var(--orange); line-height: 1; }
+    .m-fact .key { font-size: 11px; letter-spacing: 1px; color: rgba(255,255,255,.5); text-transform: uppercase; margin-top: 4px; }
+
+    /* PROPERTY SECTIONS */
+    .prop-wrap { padding: 80px 48px; }
+    .prop-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .prop-inner.rev { direction: rtl; }
+    .prop-inner.rev > * { direction: ltr; }
+    .prop-text .overline { color: var(--orange); }
+    .prop-text h2 { font-size: 28px; font-weight: 700; color: var(--brown); margin-bottom: 16px; line-height: 1.2; }
+    .prop-text p { font-size: 14px; line-height: 1.9; color: #666; margin-bottom: 20px; }
+    .prop-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px; }
+    .prop-list li { font-size: 13px; font-weight: 500; color: var(--brown); display: flex; align-items: center; gap: 8px; }
+    .prop-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+    .prop-img { position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.12); }
+    .prop-img img { width: 100%; height: 440px; object-fit: cover; display: block; transition: transform .6s; }
+    .prop-img:hover img { transform: scale(1.03); }
+    .room-badge { position: absolute; bottom: 18px; left: 18px; background: var(--dark-brown); color: white; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 8px 20px; border-radius: 50px; }
+
+    /* WOHNEINHEITEN CARDS */
+    .wohn-wrap { background: var(--white); padding: 64px 48px; }
+    .wohn-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; max-width: 1100px; margin: 0 auto; }
+    .wohn-card { border: 1.5px solid #eddcc8; border-radius: 10px; padding: 34px 28px 28px; transition: box-shadow .3s, border-color .3s; }
+    .wohn-card:hover { border-color: var(--orange); box-shadow: 0 8px 32px rgba(232,121,60,.1); }
+    .wohn-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: white; background: var(--orange); padding: 4px 14px; border-radius: 50px; margin-bottom: 14px; }
+    .wohn-card h3 { font-size: 17px; font-weight: 700; color: var(--brown); margin-bottom: 10px; }
+    .wohn-card .wohn-desc { font-size: 13px; color: #888; line-height: 1.75; margin-bottom: 16px; }
+    .wohn-card ul { list-style: none; }
+    .wohn-card ul li { font-size: 12.5px; color: #666; padding: 6px 0; border-bottom: 1px solid #f5ede4; display: flex; align-items: center; gap: 9px; }
+    .wohn-card ul li:last-child { border-bottom: none; }
+    .wohn-card ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+    /* KILLER VERKAUFSARGUMENT */
+    .killer { background: #1a1008; padding: 100px 48px; position: relative; overflow: hidden; }
+    .killer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 65% 50%, rgba(232,121,60,.10) 0%, transparent 55%); pointer-events: none; }
+    .killer-inner { max-width: 1100px; margin: 0 auto; }
+    .killer-headline { text-align: center; margin-bottom: 68px; }
+    .killer-headline .overline { color: var(--orange); }
+    .killer-headline h2 { font-size: 44px; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 18px; }
+    .killer-headline h2 em { color: var(--orange); font-style: normal; }
+    .killer-headline p { font-size: 16px; color: rgba(255,255,255,.45); font-style: italic; font-weight: 300; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .killer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .k-item { background: rgba(255,255,255,.04); padding: 48px 38px; border-top: 3px solid transparent; transition: border-color .3s, background .3s; }
+    .k-item:hover { background: rgba(255,255,255,.08); border-top-color: var(--orange); }
+    .k-num { font-size: 52px; font-weight: 800; color: var(--orange); opacity: .18; line-height: 1; margin-bottom: 14px; }
+    .k-item h3 { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: white; margin-bottom: 14px; }
+    .k-item p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.62); line-height: 1.9; }
+    .killer-cta { text-align: center; margin-top: 64px; }
+    .killer-cta p { font-size: 15px; color: rgba(255,255,255,.5); margin-bottom: 22px; font-style: italic; }
+    .killer-cta a { display: inline-block; background: var(--orange); color: white; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 18px 52px; border-radius: 50px; text-decoration: none; transition: background .25s, transform .2s; }
+    .killer-cta a:hover { background: var(--brown); transform: translateY(-2px); }
+
+    /* RETREAT */
+    .retreat-wrap { background: var(--water-light); padding: 80px 48px; }
+    .retreat-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .retreat-inner .overline { color: var(--water); }
+    .retreat-inner h2 { font-size: 28px; font-weight: 700; color: #1a3a4a; margin-bottom: 16px; }
+    .retreat-inner p { font-size: 14px; line-height: 1.9; color: #555; margin-bottom: 20px; }
+    .r-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .r-stat { background: white; border-radius: 6px; padding: 18px 20px; border-left: 3px solid var(--water); }
+    .r-stat .num { font-size: 26px; font-weight: 800; color: var(--water); }
+    .r-stat .lbl { font-size: 11px; letter-spacing: 1px; color: #888; text-transform: uppercase; margin-top: 3px; }
+    .r-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .r-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+    .r-gallery img:first-child { grid-column: 1/-1; height: 250px; }
+
+    /* STALL */
+    .stall-wrap { background: var(--cream); padding: 80px 48px; }
+    .stall-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .s-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .s-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+    .s-gallery img:first-child { grid-column: 1/-1; height: 240px; }
+
+    /* FENG SHUI */
+    .fengshui { background: linear-gradient(135deg, #0f2a2a 0%, #1a3a2a 45%, #0f2535 100%); padding: 90px 48px; position: relative; overflow: hidden; }
+    .fengshui::before { content: '☯'; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 300px; color: rgba(255,255,255,.025); pointer-events: none; line-height: 1; }
+    .fs-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .fs-text .overline { color: #7EC8C8; }
+    .fs-text h2 { font-size: 30px; font-weight: 700; color: white; margin-bottom: 6px; line-height: 1.25; }
+    .fs-text h2 span { color: #7EC8C8; }
+    .fs-text .sub { font-size: 14px; font-style: italic; color: rgba(255,255,255,.45); margin-bottom: 26px; }
+    .fs-text p { font-size: 14px; color: rgba(255,255,255,.68); line-height: 1.9; margin-bottom: 20px; }
+    .el-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .el { background: rgba(255,255,255,.06); border-radius: 8px; padding: 18px 18px; border-left: 3px solid transparent; transition: background .3s; }
+    .el:hover { background: rgba(255,255,255,.1); }
+    .el.wood  { border-left-color: #5C9A4E; }
+    .el.fire  { border-left-color: #E8793C; }
+    .el.earth { border-left-color: #C9892A; }
+    .el.metal { border-left-color: #BBBBBB; }
+    .el.water { border-left-color: #4A9EC0; }
+    .el.yin   { border-left-color: #C9892A; }
+    .el h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.88); margin-bottom: 5px; }
+    .el p { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.6; margin: 0; }
+
+    /* GALLERY */
+    .gallery-wrap { padding: 60px 48px 80px; background: var(--cream); }
+    .g-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; max-width: 1200px; margin: 0 auto; }
+    .g-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; transition: transform .4s, filter .4s; cursor: pointer; display: block; }
+    .g-grid img:hover { transform: scale(1.03); filter: brightness(1.07); }
+    .g-grid .lg { grid-column: span 2; grid-row: span 2; }
+    .g-grid .lg img { height: 100%; min-height: 450px; }
+    .g-grid .med { grid-column: span 2; }
+    .g-grid .med img { height: 220px; }
+
+    /* CONTACT */
+    .contact { background: var(--orange); padding: 80px 40px; }
+    .contact-inner { max-width: 660px; margin: 0 auto; text-align: center; }
+    .contact-inner h2 { font-size: 32px; font-weight: 700; color: white; margin-bottom: 12px; }
+    .contact-inner .overline { color: rgba(255,255,255,.8); }
+    .contact-inner > p { font-size: 14px; color: rgba(255,255,255,.85); line-height: 1.9; margin-bottom: 34px; }
+    .c-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .c-form .full { grid-column: 1/-1; }
+    .c-form input, .c-form textarea { width: 100%; background: rgba(255,255,255,.18); border: 1.5px solid rgba(255,255,255,.5); border-radius: 50px; color: white; font-family: 'Montserrat',sans-serif; font-size: 13px; padding: 14px 22px; outline: none; transition: border-color .25s, background .25s; }
+    .c-form textarea { border-radius: 18px; resize: none; height: 100px; }
+    .c-form input::placeholder, .c-form textarea::placeholder { color: rgba(255,255,255,.62); }
+    .c-form input:focus, .c-form textarea:focus { background: rgba(255,255,255,.28); border-color: white; }
+    .btn-send { grid-column: 1/-1; background: white; color: var(--orange); font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 16px; border: none; border-radius: 50px; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+    .btn-send:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 38px 48px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; }
+    .fl strong { display: block; color: rgba(255,255,255,.9); font-size: 14px; font-weight: 700; letter-spacing: 3px; margin-bottom: 6px; }
+    .fl { font-size: 12px; color: rgba(255,255,255,.55); letter-spacing: 1px; }
+    .f-links { display: flex; gap: 12px; }
+    .f-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--orange); border-radius: 8px; transition: transform .2s, background .2s; }
+    .f-links a:hover { transform: translateY(-3px); background: var(--orange-light); }
+    .f-links svg { width: 18px; height: 18px; color: white; }
+    .footer-bottom { background: #272727; text-align: center; padding: 13px; font-size: 11px; color: rgba(255,255,255,.3); letter-spacing: 2px; }
+
+    /* CHAT */
+    .chat-bubble { position: fixed; bottom: 28px; right: 28px; z-index: 9999; }
+    .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: var(--dark-brown); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(0,0,0,.25); transition: transform .2s; }
+    .chat-toggle:hover { transform: scale(1.08); }
+    .chat-toggle svg { width: 26px; height: 26px; color: white; }
+    .chat-badge { position: absolute; top: -4px; right: -4px; background: var(--orange); color: white; font-size: 9px; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .chat-win { display: none; position: absolute; bottom: 72px; right: 0; width: 340px; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.18); overflow: hidden; animation: slideUp .3s ease; }
+    .chat-win.open { display: flex; flex-direction: column; }
+    @keyframes slideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .chat-head { background: var(--dark-brown); padding: 15px 18px; display: flex; align-items: center; gap: 12px; }
+    .chat-av { width: 36px; height: 36px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; }
+    .chat-av svg { width: 18px; height: 18px; color: white; }
+    .chat-ti { color: white; font-size: 13px; font-weight: 700; }
+    .chat-su { color: rgba(255,255,255,.6); font-size: 10px; letter-spacing: 1px; }
+    .o-dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; margin-left: auto; box-shadow: 0 0 6px #4caf50; }
+    .chat-msgs { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 10px; max-height: 260px; overflow-y: auto; background: #f9f9f9; }
+    .msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 12px; line-height: 1.6; }
+    .msg.bot { background: white; color: var(--text); border: 1px solid #eee; border-bottom-left-radius: 4px; align-self: flex-start; }
+    .msg.usr { background: var(--orange); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+    .typing { display: flex; gap: 4px; align-items: center; padding: 12px 14px; }
+    .typing span { width: 7px; height: 7px; background: #bbb; border-radius: 50%; animation: bounce 1.2s infinite; }
+    .typing span:nth-child(2) { animation-delay:.2s; } .typing span:nth-child(3) { animation-delay:.4s; }
+    @keyframes bounce { 0%,60%,100% { transform:translateY(0); } 30% { transform:translateY(-8px); } }
+    .chat-sug { padding: 10px 14px 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .chat-sug button { background: var(--cream); border: 1.5px solid #e0d0c0; color: var(--brown); font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 600; padding: 5px 11px; border-radius: 50px; cursor: pointer; white-space: nowrap; transition: background .2s; }
+    .chat-sug button:hover { background: var(--orange); color: white; border-color: var(--orange); }
+    .chat-inp { padding: 11px; display: flex; gap: 8px; border-top: 1px solid #eee; background: white; }
+    .chat-inp input { flex: 1; border: 1.5px solid #e0e0e0; border-radius: 50px; padding: 9px 15px; font-family: 'Montserrat',sans-serif; font-size: 12px; outline: none; transition: border-color .2s; }
+    .chat-inp input:focus { border-color: var(--orange); }
+    .send-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--orange); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .send-btn:hover { background: var(--brown); }
+    .send-btn svg { width: 15px; height: 15px; color: white; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 10px 20px; }
+      .nav-links { display: none; }
+      .nutzung-grid, .args-grid, .hl-grid, .el-grid, .r-stats, .wohn-grid, .killer-grid { grid-template-columns: 1fr 1fr; }
+      .prop-inner, .prop-inner.rev, .retreat-inner, .stall-inner, .manilva-inner { grid-template-columns: 1fr; direction: ltr; }
+      .g-grid { grid-template-columns: 1fr 1fr; }
+      .g-grid .lg { grid-column: span 2; }
+      .c-form { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+      .hero { height: 460px; }
+      .hl { border-right: none; border-top: 1px solid rgba(255,255,255,.2); }
+    }
+    @media (max-width: 540px) {
+      .tagline h1 { font-size: 26px; }
+      .nutzung-grid, .el-grid, .r-stats, .wohn-grid, .killer-grid { grid-template-columns: 1fr; }
+      .g-grid { grid-template-columns: 1fr; }
+      .chat-win { width: 300px; right: -4px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="https://fincaananda.com/wp-content/uploads/2022/12/logo_v2-1.png" alt="Finca Ananda"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Übersicht</a></li><li class="sep">|</li>
+    <li><a href="#nutzung">Nutzung</a></li><li class="sep">|</li>
+    <li><a href="#retreat">Retreat</a></li><li class="sep">|</li>
+    <li><a href="#stall">Reitstall</a></li><li class="sep">|</li>
+    <li><a href="#galerie">Galerie</a></li><li class="sep">|</li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="diamond-grid">
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_seaview_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_garden_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt=""/></div>
+    <div class="d-item d-center">
+      <div class="d-center-inner">
+        <img src="https://fincaananda.com/wp-content/uploads/2022/12/logo_v2-1.png" alt="Finca Ananda"/>
+      </div>
+    </div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_studio.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/finca-andanda-topview-1030x773.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_yoga.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_seaview.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_garden_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_seaview_spain_jpg.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt=""/></div>
+    <div class="d-item"><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt=""/></div>
+  </div>
+  <div class="hero-badge">✦ Off-Market · Manilva, Costa del Sol · Streng Vertraulich ✦</div>
+</section>
+
+<!-- TAGLINE -->
+<section class="tagline" id="about">
+  <span class="overline">✦ Finca Ananda · Manilva · Costa del Sol · Direktangebot vom Eigentümer</span>
+  <h1><strong>Finca Ananda</strong> —<br>Ein Anwesen. Unendliche Möglichkeiten.</h1>
+  <p>Manilva, Costa del Sol. Ca. 5 Hektar. Meerblick. Reitstall. Yoga-Retreat-Infrastruktur. Mehrere Wohneinheiten. Alles bereits in Betrieb gewesen — alles bereit für das Nächste. Off-Market, exklusiv, einmalig.</p>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg>
+</div>
+
+<!-- NUTZUNGSMÖGLICHKEITEN -->
+<section class="nutzung" id="nutzung">
+  <div class="section-header">
+    <span class="overline">✦ Sechs Wege, diese Finca zu erleben</span>
+    <h2>Was ist mit Finca Ananda möglich?</h2>
+    <p>Dieses Anwesen ist keine gewöhnliche Immobilie. Es ist eine lebendige Infrastruktur — vielseitig, sofort nutzbar und bereit für Ihre Vision.</p>
+  </div>
+  <div class="nutzung-grid">
+    <div class="n-card">
+      <div class="n-num">01</div>
+      <span class="badge badge-orange">Privat</span>
+      <h3>Privater Wohnsitz</h3>
+      <p>Im Haupthaus wohnen, die Casitas für Familie oder Personal nutzen — Pool, Meerblick, Pferde direkt vor der Tür. Privatleben auf höchstem Niveau.</p>
+    </div>
+    <div class="n-card">
+      <div class="n-num">02</div>
+      <span class="badge badge-orange">Reit-Sport</span>
+      <h3>Privates Reitgestüt</h3>
+      <p>Professionelle Stallanlage mit eigenem Reitplatz. Einzelne Boxen und der Platz sind separat vermietbar — ein bewährtes Modell mit laufenden Einnahmen.</p>
+    </div>
+    <div class="n-card">
+      <div class="n-num">03</div>
+      <span class="badge badge-blue">Wellness</span>
+      <h3>Yoga &amp; Wellness Retreat</h3>
+      <p>Bereits als Retreat-Center betrieben — Yoga-Zelt, Plattformen, Seminarflächen, Gästeküche, Casitas und Tiny Houses stehen bereit. Sofort aktivierbar.</p>
+    </div>
+    <div class="n-card">
+      <div class="n-num">04</div>
+      <span class="badge badge-green">Events</span>
+      <h3>Seminar &amp; Event Center</h3>
+      <p>Workshops, Retreats, Hochzeiten, Firmenevents. Küche, Terrassen, Garten und mehrere Unterkünfte bilden eine vollständige Event-Infrastruktur.</p>
+    </div>
+    <div class="n-card">
+      <div class="n-num">05</div>
+      <span class="badge badge-gold">Investment</span>
+      <h3>Vollständige Vermietung</h3>
+      <p>Das gesamte Anwesen als exklusives Mietobjekt — Retreats, Hochzeiten, Pferdesport-Kurse. Alles vorhanden, alles erprobt.</p>
+    </div>
+    <div class="n-card">
+      <div class="n-num">06</div>
+      <span class="badge badge-dark">Hybrid</span>
+      <h3>Kombination &amp; Hybrid</h3>
+      <p>Haupthaus privat — Casitas &amp; Tiny Houses vermieten — Retreat-Flächen öffnen — Boxen verpachten. Die Finca trägt sich zum Teil selbst.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--dark-brown);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="var(--cream)"/></svg>
+</div>
+
+<!-- KAUFARGUMENT -->
+<section class="kaufargument">
+  <div class="section-header">
+    <span class="overline">✦ Das Besondere dieser Finca</span>
+    <h2 style="color:white;">Finca Ananda hat dieses Konzept<br><em style="font-style:italic;color:rgba(255,255,255,.55);">bereits erfolgreich gelebt.</em></h2>
+  </div>
+  <p class="quote-block">"Internationale Gäste haben hier Yoga-Retreats erlebt, Pferde wurden gehalten, Veranstaltungen haben stattgefunden. Die Infrastruktur steht. Der Ruf ist aufgebaut. Sie übernehmen — und gestalten neu."</p>
+  <div class="args-grid">
+    <div class="arg"><div class="arg-num">01</div><h3>Einmalig an der Costa del Sol</h3><p>Ein Anwesen mit Reitstall, Retreat-Infrastruktur, mehreren Wohneinheiten und Meerblick — vollständig und sofort nutzbar. Diese Kombination gibt es hier nicht zweimal.</p></div>
+    <div class="arg"><div class="arg-num">02</div><h3>Manilva — Lage mit Zukunft</h3><p>Zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Der Markt für Luxus-Landgüter in dieser Zone steigt — und bleibt stabil.</p></div>
+    <div class="arg"><div class="arg-num">03</div><h3>Bewährtes Konzept</h3><p>Das Retreat-Konzept ist nicht neu erfunden — es funktioniert bereits. Sie übernehmen Energie, Ruf und funktionierende Infrastruktur. Kein Aufbau. Nur Gestaltung.</p></div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--orange);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="var(--dark-brown)"/></svg>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <span class="overline">✦ Ausstattung auf einen Blick ✦</span>
+  <div class="hl-grid">
+    <div class="hl"><div class="hl-tag">Haupthaus</div><h3>3 Schlafzimmer</h3><p>Repräsentatives Hauptgebäude mit 3 Schlafzimmern, Wohnräumen, Küche, Pool und Panoramablick auf das Mittelmeer.</p></div>
+    <div class="hl"><div class="hl-tag">Casita 1 &amp; 2</div><h3>Je 2 Schlafzimmer</h3><p>Zwei vollständig autarke Casitas mit je 2 Schlafzimmern, Küche, Bad und WC. Ideal für Personal, Trainer oder separate Vermietung.</p></div>
+    <div class="hl"><div class="hl-tag">Tiny Houses</div><h3>Je 1 Doppelbett</h3><p>Charmante Tiny Houses, jedes mit eigenem Doppelbett — perfekt für Retreat-Gäste oder als zusätzliche Unterkunft.</p></div>
+    <div class="hl"><div class="hl-tag">Reitstall</div><h3>8 Boxen · 9 Paddocks</h3><p>8 professionelle Pferdeboxen, 9 Paddocks, Reitplatz 20×60 m — direkte Verbindung zu allen Außenanlagen.</p></div>
+    <div class="hl"><div class="hl-tag">Grundstück</div><h3>Ca. 5 Hektar</h3><p>Rund 5 Hektar in Manilva, Costa del Sol — Meerblick, alte Olivenbäume, natürliche Quellen, ruhige Lage.</p></div>
+    <div class="hl"><div class="hl-tag">Status</div><h3>Off-Market</h3><p>Kein öffentliches Inserat. Nur für vorqualifizierte Käufer. Diskrete Verhandlung über Simone Moharos.</p></div>
+  </div>
+</section>
+
+<!-- MANILVA -->
+<section class="manilva-strip">
+  <div class="manilva-inner">
+    <div class="manilva-text">
+      <span class="overline">✦ Die Lage macht den Unterschied</span>
+      <h2>Manilva —<br>Natur, so weit das Auge reicht.</h2>
+      <p>Wer Marbella kennt, weiß: es ist schön — aber längst nicht mehr still. Wer Manilva kennt, versteht sofort den Unterschied. Hier beginnt echte andalusische Natur, hier enden die Touristenmassen.</p>
+      <p>Finca Ananda liegt in diesem seltenen Übergangsbereich: nah genug an allem, weit genug weg vom Trubel. Berge im Rücken, Meer im Blick, Olivenbäume und Stille — und trotzdem in 20 Minuten in Marbella.</p>
+    </div>
+    <div class="manilva-facts">
+      <div class="m-fact"><div class="val">20 min</div><div class="key">nach Marbella</div></div>
+      <div class="m-fact"><div class="val">45 min</div><div class="key">Flughafen Málaga</div></div>
+      <div class="m-fact"><div class="val">Natur</div><div class="key">Soweit das Auge reicht</div></div>
+      <div class="m-fact"><div class="val">Kein</div><div class="key">Massentourismus</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--white);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="var(--dark)"/></svg>
+</div>
+
+<!-- HAUPTHAUS -->
+<section class="prop-wrap" id="haupthaus">
+  <div class="prop-inner">
+    <div class="prop-img"><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Haupthaus"/><div class="room-badge">3 Schlafzimmer · Haupthaus</div></div>
+    <div class="prop-text">
+      <span class="overline">✦ Das Herzstück der Finca</span>
+      <h2>Haupthaus mit Meerblick &amp; Panoramaterrasse</h2>
+      <p>Das Hauptgebäude verbindet andalusische Architektur mit zeitgemäßem Komfort. Drei Schlafzimmer, lichtdurchflutete Wohnräume und eine großzügige Terrasse mit direktem Blick auf das Mittelmeer.</p>
+      <p>Direkte Sichtverbindung zum Stall und zur Anlage — morgens aufwachen, Pferde und Meer sehen.</p>
+      <ul class="prop-list">
+        <li>3 Schlafzimmer</li><li>Offenes Wohnzimmer</li>
+        <li>Vollausgestattete Küche</li><li>Mehrere Bäder</li>
+        <li>Pool &amp; Terrasse</li><li>Meerblick</li>
+        <li>Direktzugang Stall</li><li>Hochwertige Materialien</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WOHNEINHEITEN -->
+<section class="wohn-wrap">
+  <div class="section-header">
+    <span class="overline">✦ Weitere Wohneinheiten auf dem Anwesen</span>
+    <h2 style="color:var(--brown);">Casitas &amp; Tiny Houses</h2>
+    <p>Neben dem Haupthaus befinden sich zwei vollständig autarke Casitas sowie zwei Tiny Houses auf dem Gelände — nutzbar für Personal, Retreat-Gäste oder separate Vermietung.</p>
+  </div>
+  <div class="wohn-grid">
+    <div class="wohn-card">
+      <span class="wohn-tag">Casita 1</span>
+      <h3>2 Schlafzimmer</h3>
+      <p class="wohn-desc">Vollständig autarke Einheit mit eigenem Eingang und Terrasse — unabhängig vom Haupthaus.</p>
+      <ul>
+        <li>2 Schlafzimmer</li>
+        <li>Küche · Bad · WC</li>
+        <li>Eigener Eingang &amp; Terrasse</li>
+        <li>Separat vermietbar</li>
+      </ul>
+    </div>
+    <div class="wohn-card">
+      <span class="wohn-tag">Casita 2</span>
+      <h3>2 Schlafzimmer</h3>
+      <p class="wohn-desc">Zweite autarke Einheit — gleiche Infrastruktur wie Casita 1, vollständig unabhängig nutzbar.</p>
+      <ul>
+        <li>2 Schlafzimmer</li>
+        <li>Küche · Bad · WC</li>
+        <li>Eigener Eingang &amp; Terrasse</li>
+        <li>Separat vermietbar</li>
+      </ul>
+    </div>
+    <div class="wohn-card">
+      <span class="wohn-tag" style="background:var(--wood);">2 Tiny Houses</span>
+      <h3>Je 1 Doppelbett</h3>
+      <p class="wohn-desc">Zwei kleine Unterkünfte eingebettet in Olivenbäume und Natur — ideal für Retreat-Gäste.</p>
+      <ul>
+        <li>Je 1 Doppelbett</li>
+        <li>In Natur eingebettet</li>
+        <li>Rückzug &amp; Stille</li>
+        <li>Flexibel belegbar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RETREAT -->
+<section class="retreat-wrap" id="retreat">
+  <div class="retreat-inner">
+    <div>
+      <span class="overline">✦ Etablierte Yoga &amp; Retreat Infrastruktur</span>
+      <h2>Alles vorhanden für ein Retreat Center</h2>
+      <p>Finca Ananda wurde bereits erfolgreich als Yoga- und Wellness-Retreat-Center betrieben. Yoga-Plattformen, Seminarräume, Außenflächen, Gästeküche, Casita 1 &amp; 2, Tiny Houses — sofort nutzbar.</p>
+      <p>Internationale Gäste haben hier Retreats erlebt, Workshops stattgefunden. Die Energie und der Ruf sind aufgebaut. Sie übernehmen ein bewährtes Konzept und entwickeln es weiter — oder ganz neu.</p>
+      <div class="r-stats">
+        <div class="r-stat"><div class="num">2</div><div class="lbl">Casitas für Gäste</div></div>
+        <div class="r-stat"><div class="num">2</div><div class="lbl">Tiny Houses</div></div>
+        <div class="r-stat"><div class="num">ca. 5 ha</div><div class="lbl">Naturgelände</div></div>
+        <div class="r-stat"><div class="num">1</div><div class="lbl">Yoga Zelt</div></div>
+      </div>
+    </div>
+    <div class="r-gallery">
+      <img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_studio.jpg" alt="Yoga Zelt"/>
+      <img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt="Outdoor"/>
+      <img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt="Abendstimmung"/>
+    </div>
+  </div>
+</section>
+
+<!-- STALL -->
+<section class="stall-wrap" id="stall">
+  <div class="stall-inner">
+    <div class="prop-text">
+      <span class="overline">✦ Professionelle Reitsportinfrastruktur</span>
+      <h2>Reitstall, Paddocks &amp; Reitplatz</h2>
+      <p>Der Stall umfasst 8 professionelle Pferdeboxen mit optimaler Belüftung und direktem Zugang zu 9 Paddocks. Der eigene Reitplatz (20×60 m) liegt auf dem ca. 5 Hektar großen Gelände — ganzjährig nutzbar.</p>
+      <p>Einzelne Boxen und der Reitplatz können an lokale Reiter vermietet werden — ein bewährtes Modell und verlässliche Zusatzeinnahme.</p>
+      <ul class="prop-list">
+        <li>8 Pferdeboxen</li><li>9 Paddocks</li>
+        <li>Reitplatz 20×60 m</li><li>Ca. 5 Hektar Gelände</li>
+        <li>Sattel- &amp; Putzraum</li><li>Heu- &amp; Futterraum</li>
+        <li>Boxen vermietbar</li><li>Reitplatz vermietbar</li>
+      </ul>
+    </div>
+    <div class="prop-img">
+      <img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt="Reitplatz Finca Ananda" style="height:500px;"/>
+      <div class="room-badge">Reitplatz 20×60 m · 8 Boxen · 9 Paddocks</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-wrap" id="galerie">
+  <div class="section-header">
+    <span class="overline">✦ Finca Ananda — Alle Impressionen</span>
+    <h2>Das Anwesen in Bildern</h2>
+  </div>
+  <div class="g-grid">
+    <!-- Row 1: large aerial + 2 -->
+    <div class="lg"><img src="https://fincaananda.com/wp-content/uploads/2023/05/finca-andanda-topview-1030x773.jpg" alt="Vogelperspektive"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_seaview_spain_jpg.jpg" alt="Pool mit Meerblick"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_seaview.jpg" alt="Meerblick Aussicht"/></div>
+    <!-- Row 2 continued (fills the right side of lg) -->
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_yoga.jpg" alt="Yoga Terrasse"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_outdoor.jpg" alt="Außenbereich"/></div>
+    <!-- Row 3 -->
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retreat_center_malaga-scaled.jpg" alt="Abendstimmung"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_spain_jpg.jpg" alt="Hauptgebäude"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain.jpg" alt="Finca Übersicht"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2023/05/retretcenter_marbella_malaga_spain_finca.jpg" alt="Finca Gebäude"/></div>
+    <!-- Row 4 -->
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_garden_spain_jpg.jpg" alt="Garten &amp; Gelände"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_horse.jpg" alt="Pferde &amp; Reitanlage"/></div>
+    <div><img src="https://fincaananda.com/wp-content/uploads/2024/06/frontpage_retreat_center_venue_studio.jpg" alt="Yoga Zelt"/></div>
+  </div>
+</section>
+
+<!-- KILLER VERKAUFSARGUMENT -->
+<section class="killer">
+  <div class="killer-inner">
+    <div class="killer-headline">
+      <span class="overline">✦ Das entscheidende Argument</span>
+      <h2>€ 5.000.000 — für ein Anwesen,<br>das mit <em>Herz</em> entstanden ist.</h2>
+      <p>Hier wurde nicht einfach gebaut. Jeder Stein, jede Anlage, jeder Baum mit Sorgfalt und Liebe gesetzt. Was Sie übernehmen, hat eine Seele — und die lässt sich nicht neu kaufen.</p>
+    </div>
+    <div class="killer-grid">
+      <div class="k-item">
+        <div class="k-num">01</div>
+        <h3>Jahrelang mit Hingabe gestaltet.</h3>
+        <p>Diese Finca ist kein Bauprojekt — sie ist ein gelebter Ort. Retreat-Gäste haben hier innere Ruhe gefunden, Pferde wurden mit Fürsorge gehalten, jede Ecke mit Bedacht eingerichtet. Was Sie übernehmen, trägt diese Geschichte in sich.</p>
+      </div>
+      <div class="k-item">
+        <div class="k-num">02</div>
+        <h3>Mehrere Einnahmen. Sofort.</h3>
+        <p>Casitas vermieten. Boxen verpachten. Reitplatz an lokale Reiter vermieten. Retreats anbieten. Jede dieser Quellen ist einzeln rentabel — zusammen trägt sich die Finca zum Teil selbst.</p>
+      </div>
+      <div class="k-item">
+        <div class="k-num">03</div>
+        <h3>Einmalig. Nicht wiederholbar.</h3>
+        <p>5 Hektar. Reitstall. Retreat-Infrastruktur. Meerblick. Manilva. Diese Kombination gibt es an der Costa del Sol kein zweites Mal — und sie lässt sich auch nicht ein zweites Mal so aufbauen.</p>
+      </div>
+    </div>
+    <div class="killer-cta">
+      <p>Dieses Anwesen wird nicht inseriert. Nur für Sie.</p>
+      <a href="#kontakt">Jetzt Kontakt aufnehmen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--orange);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="#1a1008"/></svg>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <span class="overline">✦ Unverbindlich &amp; Diskret</span>
+    <h2>Finca Ananda anfragen</h2>
+    <p>Dieses Anwesen wird ausschließlich auf Anfrage und unter strikter Vertraulichkeit vermittelt. Sprechen Sie direkt mit <strong>Simone Moharos</strong> — persönlich, diskret, ohne Umwege.<br><br>
+      <a href="tel:+34681336692" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">📞 +34 681 336 692</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="https://wa.me/34681336692" target="_blank" style="color:white;font-weight:700;font-size:17px;text-decoration:none;">💬 WhatsApp</a>
+    </p>
+    <form class="c-form" onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Ihr Name" required/>
+      <input type="tel" placeholder="Telefon"/>
+      <input class="full" type="email" placeholder="E-Mail-Adresse" required/>
+      <textarea class="full" placeholder="Ihre Nachricht — Nutzungsidee, Fragen, Besichtigungswunsch …"></textarea>
+      <button type="submit" class="btn-send">Anfrage senden</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">
+    <strong>MOHAROS Marbella S.L.</strong>
+    Simone Moharos · +34 681 336 692 · simonemoharos@gmail.com
+  </div>
+  <div class="f-links">
+    <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg></a>
+    <a href="https://wa.me/34681336692" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.06L2 22l5.09-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 13.43c-.19.55-1.11 1.05-1.52 1.1-.41.05-.79.25-2.68-.56-2.27-.96-3.72-3.27-3.83-3.42-.11-.15-.9-1.2-.9-2.28s.57-1.62.78-1.84c.2-.22.44-.27.59-.27h.42c.14 0 .32-.05.49.37l.7 1.74c.06.15.1.32.02.48l-.27.48-.41.46c-.13.14-.27.29-.12.57.16.28.69 1.13 1.48 1.83.81.71 1.5.93 1.78 1.04.28.1.44.08.6-.05.16-.14.67-.78.85-1.04.18-.27.36-.22.6-.13l1.7.8c.27.13.43.19.49.3.05.1.05.59-.14 1.14z"/></svg></a>
+    <a href="mailto:simonemoharos@gmail.com" title="E-Mail"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 4l10 9 10-9"/></svg></a>
+  </div>
+</footer>
+<div class="footer-bottom">© 2026 MOHAROS Marbella S.L. · Simone Moharos · Finca Ananda, Manilva – Off-Market Exklusiv-Angebot · Streng Vertraulich</div>
+
+<!-- AI CONCIERGE -->
+<div class="chat-bubble">
+  <div class="chat-win" id="chatWin">
+    <div class="chat-head">
+      <div class="chat-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div><div class="chat-ti">AI Concierge · Finca Ananda</div><div class="chat-su">Simone Moharos · Sofort verfügbar</div></div>
+      <div class="o-dot"></div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="msg bot">Willkommen bei <strong>Finca Ananda</strong> 🐎🌿<br><br>Fragen Sie mich alles zu diesem Off-Market Anwesen in Manilva — diskret und sofort. Ich bin der Concierge von <strong>Simone Moharos</strong>.</div>
+    </div>
+    <div class="chat-sug" id="chatSug">
+      <button onclick="sug(this,'Was kann man mit der Finca machen?')">🏡 Nutzung</button>
+      <button onclick="sug(this,'Was ist mit dem Yoga Retreat?')">🧘 Retreat</button>
+      <button onclick="sug(this,'Wie viele Pferde passen auf das Anwesen?')">🐴 Pferde</button>
+      <button onclick="sug(this,'Wie viele Schlafzimmer hat das Anwesen?')">🛏 Zimmer</button>
+      <button onclick="sug(this,'Wo liegt die Finca genau?')">📍 Lage</button>
+    </div>
+    <div class="chat-inp">
+      <input type="text" id="chatIn" placeholder="Ihre Frage …" onkeydown="if(event.key==='Enter') send()"/>
+      <button class="send-btn" onclick="send()"><svg viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <div class="chat-badge">AI</div>
+  </button>
+</div>
+
+<script>
+const R = {
+  nutzung:   "Finca Ananda ist außergewöhnlich vielseitig: **Privater Wohnsitz** mit Pferden, **Yoga & Wellness Retreat**, **Seminar & Event Center**, vollständige **Vermietung** oder eine intelligente **Kombination** aus allem.",
+  retreat:   "Finca Ananda war **bereits als Yoga-Retreat-Center in Betrieb**. Yoga-Plattformen, Seminarflächen, **Casita 1 &amp; 2**, Tiny Houses und Küche sind vorhanden. Kapazität: bis zu **50 Personen** tagsüber, **20–25 Übernachtungsgäste**.",
+  pferde:    "Der Reitstall bietet **8 Pferdeboxen**, **9 Paddocks** und einen professionellen **Reitplatz 20×60 m**. Einzelne Boxen und der Reitplatz sind auch **separat an lokale Reiter vermietbar** — bewährtes Zusatzeinkommen.",
+  preis:     "Der Verkaufspreis beträgt **€ 5.000.000,–**. Für qualifizierte Interessenten stellt Simone Moharos gerne ein Exposé bereit: 📞 +34 681 336 692",
+  besichtig: "Besichtigungen nach Vereinbarung — kontaktieren Sie **Simone Moharos** direkt: 📞 +34 681 336 692 oder per **WhatsApp**. Rückmeldung innerhalb von 24 Stunden.",
+  fengshui:  "Finca Ananda liegt in einer **Feng-Shui-Meisterlage**: Berge im Rücken (Schutz), Meer im Blick (Expansion), Quellen auf dem Grundstück, alte Olivenbäume. Alle **5 Elemente sind in Balance** — das macht den Ort so besonders.",
+  lage:      "**Manilva**, Costa del Sol — zwischen Marbella und Gibraltar. Ruhiger als Marbella, exklusiver als Estepona. Meerblick, Berge, Natur. Eine der energetisch stärksten Lagen an der Küste.",
+  sz:        "Das **Haupthaus** hat **3 Schlafzimmer**, **Casita 1** und **Casita 2** je **2 Schlafzimmer** — dazu mehrere **Tiny Houses** mit je einem Doppelbett. Insgesamt 7+ Schlafeinheiten auf dem Anwesen.",
+  default:   "Für alle Details steht **Simone Moharos** persönlich zur Verfügung: 📞 +34 681 336 692 oder per WhatsApp. Oder stellen Sie mir gerne eine konkrete Frage zur Finca!"
+};
+
+function getR(m) {
+  const t = m.toLowerCase();
+  if (t.includes('nutzung')||t.includes('machen')||t.includes('möglich')||t.includes('konzept')||t.includes('verwend')) return R.nutzung;
+  if (t.includes('yoga')||t.includes('retreat')||t.includes('wellness')||t.includes('seminar')||t.includes('event')) return R.retreat;
+  if (t.includes('pferd')||t.includes('stall')||t.includes('box')||t.includes('reit')) return R.pferde;
+  if (t.includes('preis')||t.includes('kost')||t.includes('euro')||t.includes('million')) return R.preis;
+  if (t.includes('besichtig')||t.includes('termin')||t.includes('sehen')||t.includes('anschauen')) return R.besichtig;
+  if (t.includes('feng')||t.includes('energie')||t.includes('chi')||t.includes('element')||t.includes('yin')) return R.fengshui;
+  if (t.includes('lag')||t.includes('manilva')||t.includes('marbella')||t.includes('region')||t.includes('wo ')) return R.lage;
+  if (t.includes('schlaf')||t.includes('zimmer')||t.includes('sz')) return R.sz;
+  return R.default;
+}
+
+function toggleChat() { document.getElementById('chatWin').classList.toggle('open'); }
+
+function addMsg(txt, type) {
+  const c = document.getElementById('chatMsgs');
+  const d = document.createElement('div'); d.className = 'msg ' + type;
+  d.innerHTML = txt.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  c.appendChild(d); c.scrollTop = c.scrollHeight;
+}
+
+function showTyping() {
+  const c = document.getElementById('chatMsgs');
+  const d = document.createElement('div'); d.className = 'msg bot typing'; d.id = 't-ind';
+  d.innerHTML = '<span></span><span></span><span></span>';
+  c.appendChild(d); c.scrollTop = c.scrollHeight; return d;
+}
+
+function send() {
+  const inp = document.getElementById('chatIn');
+  const msg = inp.value.trim(); if (!msg) return; inp.value = '';
+  addMsg(msg, 'usr');
+  document.getElementById('chatSug').style.display = 'none';
+  const t = showTyping();
+  setTimeout(() => { t.remove(); addMsg(getR(msg), 'bot'); }, 800 + Math.random()*500);
+}
+
+function sug(btn, txt) {
+  document.getElementById('chatIn').value = txt; send();
+  btn.disabled = true; btn.style.opacity = '.45';
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-send');
+  btn.textContent = '✓ Vielen Dank! Simone meldet sich bald.';
+  btn.style.background = '#4caf50'; btn.style.color = 'white';
+  setTimeout(() => { btn.textContent = 'Anfrage senden'; btn.style.background = ''; btn.style.color = ''; }, 4000);
+  return false;
+}
+
+const secs = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navAs.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? '#E8793C' : ''; });
+});
+</script>
+</body>
+</html>
